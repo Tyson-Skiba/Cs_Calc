@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Tyson\Documents\Visual Studio 2017\Projects\Cs_Calc\Cs_Calc\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-13T16:47:43.663</Modified>
+      <Modified>2017-05-13T17:20:49.008</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Tyson\Documents\Visual Studio 2017\Projects\Cs_Calc\Cs_Calc\bin\x86\Debug\Cs_Calc.exe">
       <PackagePath>entrypoint\Cs_Calc.exe</PackagePath>
-      <Modified>2017-05-13T16:47:42.031</Modified>
+      <Modified>2017-05-13T17:20:47.840</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tyson\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -544,11 +544,11 @@
     <AppxPackagedFile Include="C:\Users\Tyson\Documents\Visual Studio 2017\Projects\Cs_Calc\Cs_Calc\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-13T16:47:43.136</Modified>
+      <Modified>2017-05-13T17:20:48.620</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tyson\Documents\Visual Studio 2017\Projects\Cs_Calc\Cs_Calc\bin\x86\Debug\Core\Cs_Calc.exe">
       <PackagePath>Cs_Calc.exe</PackagePath>
-      <Modified>2017-05-13T16:47:43.652</Modified>
+      <Modified>2017-05-13T17:20:48.998</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

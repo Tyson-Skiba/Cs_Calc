@@ -13,7 +13,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBox x:Name="textBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="640" />
         <Button x:Name="button1" Content="1" Margin="128,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button1_Click"/>
-        <Button x:Name="button" Content="2" Margin="256,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button2_Click"/>
+        <Button x:Name="button2" Content="2" Margin="256,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button2_Click"/>
         <Button x:Name="button3" Content="3" Margin="384,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button3_Click"/>
         <Button x:Name="button4" Content="4" Margin="128,120,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button4_Click"/>
         <Button x:Name="button5" Content="5" Margin="256,120,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button5_Click"/>
@@ -21,7 +21,7 @@
         <Button x:Name="button7" Content="7" Margin="128,60,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button7_Click"/>
         <Button x:Name="button8" Content="8" Margin="256,60,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button8_Click"/>
         <Button x:Name="button9" Content="9" Margin="384,60,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button9_Click"/>
-        <Button x:Name="button10" Content="0" Margin="256,240,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button0_Click"/>
+        <Button x:Name="button0" Content="0" Margin="256,240,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button0_Click"/>
         <Button x:Name="button11" Content="Plus" Margin="512,240,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="buttonP_Click"/>
         <Button x:Name="button12" Content="Minus" Margin="512,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="buttonM_Click"/>
         <Button x:Name="button13" Content="Multiply" Margin="512,120,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="buttonX_Click"/>

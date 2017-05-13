@@ -13,7 +13,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBox x:ConnectionId='1' x:Name="textBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="640" />
         <Button x:ConnectionId='2' x:Name="button1" Content="1" Margin="128,180,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='3' x:Name="button" Content="2" Margin="256,180,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
+        <Button x:ConnectionId='3' x:Name="button2" Content="2" Margin="256,180,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
         <Button x:ConnectionId='4' x:Name="button3" Content="3" Margin="384,180,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
         <Button x:ConnectionId='5' x:Name="button4" Content="4" Margin="128,120,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
         <Button x:ConnectionId='6' x:Name="button5" Content="5" Margin="256,120,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
@@ -21,7 +21,7 @@
         <Button x:ConnectionId='8' x:Name="button7" Content="7" Margin="128,60,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
         <Button x:ConnectionId='9' x:Name="button8" Content="8" Margin="256,60,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
         <Button x:ConnectionId='10' x:Name="button9" Content="9" Margin="384,60,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='11' x:Name="button10" Content="0" Margin="256,240,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
+        <Button x:ConnectionId='11' x:Name="button0" Content="0" Margin="256,240,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
         <Button x:ConnectionId='12' x:Name="button11" Content="Plus" Margin="512,240,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
         <Button x:ConnectionId='13' x:Name="button12" Content="Minus" Margin="512,180,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
         <Button x:ConnectionId='14' x:Name="button13" Content="Multiply" Margin="512,120,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />

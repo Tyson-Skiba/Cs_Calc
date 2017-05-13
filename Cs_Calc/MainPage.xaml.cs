@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -12,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+
 
 
 namespace Cs_Calc
@@ -29,6 +31,21 @@ namespace Cs_Calc
         public MainPage()
         {
             this.InitializeComponent();
+
+            button1.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            button2.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            button3.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            button4.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            button5.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            button6.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            button7.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            button8.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            button9.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            button0.Background = new SolidColorBrush(Windows.UI.Colors.White);
+
+
+            button16.Background = new SolidColorBrush(Windows.UI.Colors.DarkGray);
+            button17.Background = new SolidColorBrush(Windows.UI.Colors.DarkOrange);
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -153,6 +170,8 @@ namespace Cs_Calc
 
             double.TryParse(x, out num1);
             double.TryParse(y, out num2);
+
+            button16.Background = new SolidColorBrush(Windows.UI.Colors.DarkGray);
 
             if (operation == '+')
             {
