@@ -1,0 +1,1 @@
+C:\Users\Tyson\Documents\Visual Studio 2017\Projects\Cs_Calc\Cs_Calc\Cs_Calc.csproj;x86
