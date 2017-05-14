@@ -24,6 +24,7 @@ namespace Cs_Calc
     public sealed partial class MainPage : Page
     {
         string input = string.Empty;
+        string display = string.Empty;
         string x = string.Empty;
         string y = string.Empty;
         char operation;
@@ -115,7 +116,9 @@ namespace Cs_Calc
         {
             this.textBox.Text = " ";
             input += "9";
-            this.textBox.Text += input;
+            display += "9";
+            //this.textBox.Text += input;
+            this.textBox.Text = display;
 
         }
 
@@ -123,7 +126,9 @@ namespace Cs_Calc
         {
             this.textBox.Text = " ";
             input += "0";
-            this.textBox.Text += input;
+            display += "0";
+            // this.textBox.Text += input;
+            this.textBox.Text = display;
 
         }
 
@@ -131,6 +136,8 @@ namespace Cs_Calc
         {
             x = input;
             operation = '+';
+            display += "+";
+            this.textBox.Text = display;
             input = string.Empty;
         }
 
@@ -177,6 +184,8 @@ namespace Cs_Calc
             {
                 result = num1 + num2;
                 textBox.Text = result.ToString();
+                resut.Text = result.ToString();
+                
             }
             else if (operation == '-')
             {
@@ -206,6 +215,8 @@ namespace Cs_Calc
         private void button15_Click(object sender, RoutedEventArgs e)
         {
             textBox.Text = "0";
+            resut.Text = "";
+            display = "";
         }
     }
 }

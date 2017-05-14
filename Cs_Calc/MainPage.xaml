@@ -11,7 +11,9 @@
      A Text Box is also present which allows for the result to be displayed -->
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="640" />
+        
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="640" />
+        <TextBox x:Name="resut" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="640" Margin="0,30,0,0" TextAlignment="Right"/>
         <Button x:Name="button1" Content="1" Margin="128,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button1_Click"/>
         <Button x:Name="button2" Content="2" Margin="256,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button2_Click"/>
         <Button x:Name="button3" Content="3" Margin="384,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button3_Click"/>
