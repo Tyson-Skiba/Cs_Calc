@@ -49,7 +49,7 @@ namespace Cs_Calc
         char operation;                         // Declare a char to be used for the operand (+,-<x<div)
         double result = 0.0;                    // Initialise the double precison floating point value (decimal) to 0;
         double runningTotal = 0.0;
-
+        String totalDisp = string.Empty;
         
 
         public MainPage()
@@ -57,31 +57,18 @@ namespace Cs_Calc
             this.InitializeComponent();
             
 
-            button1.Background = new SolidColorBrush(Windows.UI.Colors.White);
-            button2.Background = new SolidColorBrush(Windows.UI.Colors.White);
-            button3.Background = new SolidColorBrush(Windows.UI.Colors.White);
-            button4.Background = new SolidColorBrush(Windows.UI.Colors.White);
-            button5.Background = new SolidColorBrush(Windows.UI.Colors.White);
-            button6.Background = new SolidColorBrush(Windows.UI.Colors.White);
-            button7.Background = new SolidColorBrush(Windows.UI.Colors.White);
-            button8.Background = new SolidColorBrush(Windows.UI.Colors.White);
-            button9.Background = new SolidColorBrush(Windows.UI.Colors.White);
-            button0.Background = new SolidColorBrush(Windows.UI.Colors.White);
-
-
-            button16.Background = new SolidColorBrush(Windows.UI.Colors.DarkGray);
-            button17.Background = new SolidColorBrush(Windows.UI.Colors.DarkOrange);
+            
         }
 
         public void solver(char whichO)
         {
-            y = input;
+            /*y = input;
             double num1, num2;
 
             double.TryParse(x, out num1);      // Convert String x to Double num1
             double.TryParse(y, out num2);      // This is like atoi
 
-            button16.Background = new SolidColorBrush(Windows.UI.Colors.DarkGray);
+            
 
             if (whichO == '+')
             {
@@ -117,137 +104,161 @@ namespace Cs_Calc
                 }
 
             }
-            
+            */
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void oneClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "1";
-            this.textBox.Text += input;
+            //this.textBox.Text += input;
+            totalDisp = totalDisp + "1";
+            this.textBox.Text = totalDisp;
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void twoClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "2";
-            this.textBox.Text += input;
+            //this.textBox.Text += input;
+            totalDisp = totalDisp + "2";
+            this.textBox.Text = totalDisp;
 
         }
 
-        private void button3_Click(object sender, RoutedEventArgs e)
+        private void threeClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "3";
-            this.textBox.Text += input;
+            //this.textBox.Text += input;
+            totalDisp = totalDisp + "3";
+            this.textBox.Text = totalDisp;
 
         }
 
-        private void button4_Click(object sender, RoutedEventArgs e)
+        private void fourClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "4";
-            this.textBox.Text += input;
-
+            //this.textBox.Text += input;
+            totalDisp = totalDisp + "4";
+            this.textBox.Text = totalDisp;
         }
 
-        private void button5_Click(object sender, RoutedEventArgs e)
+        private void fiveClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "5";
-            this.textBox.Text += input;
-
+            //this.textBox.Text += input;
+            totalDisp = totalDisp + "5";
+            this.textBox.Text = totalDisp;
         }
 
-        private void button6_Click(object sender, RoutedEventArgs e)
+        private void sixClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "6";
-            this.textBox.Text += input;
-
+            //this.textBox.Text += input;
+            totalDisp = totalDisp + "6";
+            this.textBox.Text = totalDisp;
         }
 
-        private void button7_Click(object sender, RoutedEventArgs e)
+        private void sevenClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "7";
-            this.textBox.Text += input;
-
+            //this.textBox.Text += input;
+            totalDisp = totalDisp + "7";
+            this.textBox.Text = totalDisp;
         }
 
-        private void button8_Click(object sender, RoutedEventArgs e)
+        private void eightClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "8";
-            this.textBox.Text += input;
-
+            //this.textBox.Text += input;
+            totalDisp = totalDisp + "8";
+            this.textBox.Text = totalDisp;
         }
 
-        private void button9_Click(object sender, RoutedEventArgs e)
+        private void nineClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "9";
             display += "9";
             //this.textBox.Text += input;
-            this.textBox.Text = display;
-
+            //this.textBox.Text = display;
+            totalDisp = totalDisp + "9";
+            this.textBox.Text = totalDisp;
         }
 
-        private void button0_Click(object sender, RoutedEventArgs e)
+        private void zeroClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "0";
             display += "0";
             // this.textBox.Text += input;
-            this.textBox.Text = display;
+            //this.textBox.Text = display;
+            totalDisp = totalDisp + "9";
+            this.textBox.Text = totalDisp;
 
         }
 
-        private void buttonP_Click(object sender, RoutedEventArgs e)
+        private void plusClick(object sender, RoutedEventArgs e)
         {
             // PLUS
             x = input;
             operation = '+';
             //solver('+');
             display += "+";
-            this.textBox.Text = display;
+            //this.textBox.Text = display;
             input = string.Empty;
+            totalDisp = totalDisp + "+";
+            this.textBox.Text = totalDisp;
         }
 
-        private void buttonM_Click(object sender, RoutedEventArgs e)
+        private void minusClick(object sender, RoutedEventArgs e)
         {
             // MINUS
             x = input;
             operation = '-';
             //solver('-');
             input = string.Empty;
+            totalDisp = totalDisp + "-";
+            this.textBox.Text = totalDisp;
         }
 
-        private void buttonX_Click(object sender, RoutedEventArgs e)
+        private void multiplyClick(object sender, RoutedEventArgs e)
         {
             // Multiply
             x = input;
             operation = '*';
             input = string.Empty;
+            totalDisp = totalDisp + "\u00D7";
+            this.textBox.Text = totalDisp;
         }
 
-        private void buttonD_Click(object sender, RoutedEventArgs e)
+        private void divideClick(object sender, RoutedEventArgs e)
         {
             // Divide
             x = input;
             operation = '/';
             input = string.Empty;
+            totalDisp = totalDisp + "\u00F7";
+            this.textBox.Text = totalDisp;
         }
 
-        private void buttonDot_Click(object sender, RoutedEventArgs e)
+        private void dotClick(object sender, RoutedEventArgs e)
         {
             // Dot Point
             this.textBox.Text = " ";
             input += ".";
             this.textBox.Text += input;
+            totalDisp = totalDisp + ".";
+            this.textBox.Text = totalDisp;
         }
 
-        private void button16_Click(object sender, RoutedEventArgs e)
+        private void solveClick(object sender, RoutedEventArgs e)
         {
             // Solve
             y = input;
@@ -256,13 +267,13 @@ namespace Cs_Calc
             double.TryParse(x, out num1);
             double.TryParse(y, out num2);
 
-            button16.Background = new SolidColorBrush(Windows.UI.Colors.DarkGray);
+            //button16.Background = new SolidColorBrush(Windows.UI.Colors.DarkGray);
 
             if (operation == '+')
             {
                 result = num1 + num2;
                 textBox.Text = result.ToString();
-                resut.Text = result.ToString();
+                resultBox.Text = result.ToString();
                 
             }
             else if (operation == '-')
@@ -288,14 +299,54 @@ namespace Cs_Calc
                 }
 
             }
+            resultBox.Text = result.ToString();
         }
 
-        private void button15_Click(object sender, RoutedEventArgs e)
+        private void rootClick(object sender, RoutedEventArgs e)
+        {
+            totalDisp = totalDisp + "\u221A";
+            this.textBox.Text = totalDisp;
+        }
+
+        private void squareClick(object sender, RoutedEventArgs e)
+        {
+            totalDisp = totalDisp + "\u00B2";
+            this.textBox.Text = totalDisp;
+        }
+
+        private void powerClick(object sender, RoutedEventArgs e)
+        {
+            totalDisp = totalDisp + "\u00F7";
+            // If to work out value ie 1 2 3 4 5 6 7 8 9 0
+            this.textBox.Text = totalDisp;
+        }
+
+        private void ofClick(object sender, RoutedEventArgs e)
+        {
+            totalDisp = totalDisp + "\u00F7";
+            // If to work out value ie 1 2 3 4 5 6 7 8 9 0
+            this.textBox.Text = totalDisp;
+        }
+
+        private void backspaceClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void engClick(object sender, RoutedEventArgs e)
+        {
+            totalDisp = totalDisp + "\u00F7";
+            // If to work out value ie 1 2 3 4 5 6 7 8 9 0
+            this.textBox.Text = totalDisp;
+        }
+
+        private void clearAllClick(object sender, RoutedEventArgs e)
         {
             textBox.Text = "0";
-            resut.Text = "";
+            resultBox.Text = "";
             display = "";
             x = "0";
+            totalDisp = string.Empty;
             //display.Text = "";
         }
     }

@@ -10,33 +10,77 @@
     <!-- This grid sets up the buttons in terms of size, content and action when clicked
      A Text Box is also present which allows for the result to be displayed -->
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="640" />
-        <TextBox x:Name="resut" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="640" Margin="0,30,0,0" TextAlignment="Right"/>
-        <Button x:Name="button1" Content="1" Margin="128,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button1_Click"/>
-        <Button x:Name="button2" Content="2" Margin="256,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button2_Click"/>
-        <Button x:Name="button3" Content="3" Margin="384,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button3_Click"/>
-        <Button x:Name="button4" Content="4" Margin="128,120,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button4_Click"/>
-        <Button x:Name="button5" Content="5" Margin="256,120,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button5_Click"/>
-        <Button x:Name="button6" Content="6" Margin="384,120,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button6_Click"/>
-        <Button x:Name="button7" Content="7" Margin="128,60,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button7_Click"/>
-        <Button x:Name="button8" Content="8" Margin="256,60,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button8_Click"/>
-        <Button x:Name="button9" Content="9" Margin="384,60,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button9_Click"/>
-        <Button x:Name="button0" Content="0" Margin="256,240,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="button0_Click"/>
-        <Button x:Name="button11" Content="Plus" Margin="512,240,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="buttonP_Click"/>
-        <Button x:Name="button12" Content="Minus" Margin="512,180,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="buttonM_Click"/>
-        <Button x:Name="button13" Content="Multiply" Margin="512,120,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="buttonX_Click"/>
-        <Button x:Name="button14" Content="Divide" Margin="512,60,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="buttonD_Click"/>
-        <Button x:Name="button15" Content="." Margin="384,240,0,0" VerticalAlignment="Top" Height="60" Width="128" Click="buttonDot_Click"/>
-        <Button x:Name="button16" Content="Clear" Margin="0,300,0,0" VerticalAlignment="Top" Height="60" Width="320" Click="button15_Click"/>
-        <Button x:Name="button17" Content="Solve" Margin="320,300,0,0" VerticalAlignment="Top" Height="60" Width="320" Click="button16_Click"/>
-        <Button x:Name="button18" Content="10^x" Margin="128,240,0,0" VerticalAlignment="Top" Height="60" Width="128" />
-        <Button x:Name="button19" Content="Square" Margin="0,60,0,0" VerticalAlignment="Top" Height="60" Width="128" />
-        <Button x:Name="button20" Content="Square Root" Margin="0,120,0,0" VerticalAlignment="Top" Height="60" Width="128" />
-        <Button x:Name="button21" Content="Power" Margin="0,180,0,0" VerticalAlignment="Top" Height="60" Width="128" />
-        <Button x:Name="button22" Content="Of" Margin="0,240,0,0" VerticalAlignment="Top" Height="60" Width="128" />
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- 7 Rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.08*" />
+            <RowDefinition Height="0.08*" />
+            <RowDefinition Height="0.16*" />
+            <RowDefinition Height="0.16*" />
+            <RowDefinition Height="0.16*" />
+            <RowDefinition Height="0.16*" />
+            <RowDefinition Height="0.16*" />
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="textBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5"/>
+        <TextBox x:Name="resultBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap"  TextAlignment="Right" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="1"/>
+
+        <!-- Input Row One -->
+        <Button Grid.Column="0" Grid.Row="2" Margin="0" Background="DarkOrange" Click="squareClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Squared">x&#x00B2;</TextBlock>
+        </Button>
+        <Button Content="7" Grid.Column="1" Grid.Row="2" Margin="0" Click="sevenClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="8" Grid.Column="2" Grid.Row="2" Margin="0" Click="eightClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="9" Grid.Column="3" Grid.Row="2" Margin="0" Click="nineClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button  Grid.Column="4" Grid.Row="2" Margin="0" Background="Orange" Click="divideClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Divide">&#x00F7;</TextBlock>
+        </Button>
+        <!-- Input Row Two -->
+        <Button Grid.Column="0" Grid.Row="3" Margin="0" Background="DarkOrange" Click="rootClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Root">&#x221A;</TextBlock>
+        </Button>
+        <Button Content="4" Grid.Column="1"  Grid.Row="3" Margin="0" Click="fourClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="5" Grid.Column="2" Grid.Row="3" Margin="0" Click="fiveClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="6" Grid.Column="3" Grid.Row="3" Margin="0" Click="sixClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button  Grid.Column="4" Grid.Row="3" Margin="0" Background="Orange" Click="multiplyClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Multiply">&#x00D7;</TextBlock>
+        </Button>
+        <!-- Input Row Three -->
+        <Button Grid.Column="0" Grid.Row="4" Margin="0" Background="DarkOrange" Click="powerClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Power">x&#x207F;</TextBlock>
+        </Button>
+        <Button Content="1" Grid.Column="1"  Grid.Row="4" Margin="0" Click="oneClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="2" Grid.Column="2" Grid.Row="4" Margin="0" Click="twoClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="3" Grid.Column="3" Grid.Row="4" Margin="0" Click="threeClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button  Grid.Column="4" Grid.Row="4" Margin="0" Background="Orange" Click="plusClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Plus">+</TextBlock>
+        </Button>
+        <!-- Input Row Three -->
+        <Button Grid.Column="0" Grid.Row="5" Margin="0" Background="DarkOrange" Click="ofClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Of">&#x207F;&#x221A;</TextBlock>
+        </Button>
+        <Button Grid.Column="1"  Grid.Row="5" Margin="0" Background="WhiteSmoke" Click="engClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Eng">10&#x207F;</TextBlock>
+        </Button>
+        <Button Content="0" Grid.Column="2" Grid.Row="5" Margin="0" Click="zeroClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="." Grid.Column="3" Grid.Row="5" Margin="0" Background="WhiteSmoke" Click="dotClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button  Grid.Column="4" Grid.Row="5" Margin="0" Background="Orange" Click="minusClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Minus">-</TextBlock>
+        </Button>
+
+        <Button Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="6" Margin="0" Background="PaleVioletRed" Click="backspaceClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:Name="Backspace">&#x21A4;</TextBlock>
+        </Button>
+        <Button Content="Clear All" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" Margin="0" Background="PaleVioletRed" Click="clearAllClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Content="Solve" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="6" Margin="0" Background="LightSalmon" Click="solveClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
     </Grid>
 </Page>

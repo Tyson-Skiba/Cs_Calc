@@ -10,33 +10,77 @@
     <!-- This grid sets up the buttons in terms of size, content and action when clicked
      A Text Box is also present which allows for the result to be displayed -->
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
-        <TextBox x:ConnectionId='1' x:Name="textBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="640" />
-        <TextBox x:ConnectionId='2' x:Name="resut" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="640" Margin="0,30,0,0" TextAlignment="Right"/>
-        <Button x:ConnectionId='3' x:Name="button1" Content="1" Margin="128,180,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='4' x:Name="button2" Content="2" Margin="256,180,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='5' x:Name="button3" Content="3" Margin="384,180,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='6' x:Name="button4" Content="4" Margin="128,120,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='7' x:Name="button5" Content="5" Margin="256,120,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='8' x:Name="button6" Content="6" Margin="384,120,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='9' x:Name="button7" Content="7" Margin="128,60,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='10' x:Name="button8" Content="8" Margin="256,60,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='11' x:Name="button9" Content="9" Margin="384,60,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='12' x:Name="button0" Content="0" Margin="256,240,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='13' x:Name="button11" Content="Plus" Margin="512,240,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='14' x:Name="button12" Content="Minus" Margin="512,180,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='15' x:Name="button13" Content="Multiply" Margin="512,120,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='16' x:Name="button14" Content="Divide" Margin="512,60,0,0" VerticalAlignment="Top" Height="60" Width="128"                      />
-        <Button x:ConnectionId='17' x:Name="button15" Content="." Margin="384,240,0,0" VerticalAlignment="Top" Height="60" Width="128"                        />
-        <Button x:ConnectionId='18' x:Name="button16" Content="Clear" Margin="0,300,0,0" VerticalAlignment="Top" Height="60" Width="320"                       />
-        <Button x:ConnectionId='19' x:Name="button17" Content="Solve" Margin="320,300,0,0" VerticalAlignment="Top" Height="60" Width="320"                       />
-        <Button x:ConnectionId='20' x:Name="button18" Content="10^x" Margin="128,240,0,0" VerticalAlignment="Top" Height="60" Width="128" />
-        <Button x:ConnectionId='21' x:Name="button19" Content="Square" Margin="0,60,0,0" VerticalAlignment="Top" Height="60" Width="128" />
-        <Button x:ConnectionId='22' x:Name="button20" Content="Square Root" Margin="0,120,0,0" VerticalAlignment="Top" Height="60" Width="128" />
-        <Button x:ConnectionId='23' x:Name="button21" Content="Power" Margin="0,180,0,0" VerticalAlignment="Top" Height="60" Width="128" />
-        <Button x:ConnectionId='24' x:Name="button22" Content="Of" Margin="0,240,0,0" VerticalAlignment="Top" Height="60" Width="128" />
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- 7 Rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.08*" />
+            <RowDefinition Height="0.08*" />
+            <RowDefinition Height="0.16*" />
+            <RowDefinition Height="0.16*" />
+            <RowDefinition Height="0.16*" />
+            <RowDefinition Height="0.16*" />
+            <RowDefinition Height="0.16*" />
+        </Grid.RowDefinitions>
+
+        <TextBox x:ConnectionId='1' x:Name="textBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5"/>
+        <TextBox x:ConnectionId='2' x:Name="resultBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap"  TextAlignment="Right" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="1"/>
+
+        <!-- Input Row One -->
+        <Button x:ConnectionId='3' Grid.Column="0" Grid.Row="2" Margin="0" Background="DarkOrange"                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='35' x:Name="Squared">x&#x00B2;</TextBlock>
+        </Button>
+        <Button x:ConnectionId='4' Content="7" Grid.Column="1" Grid.Row="2" Margin="0"                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='5' Content="8" Grid.Column="2" Grid.Row="2" Margin="0"                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='6' Content="9" Grid.Column="3" Grid.Row="2" Margin="0"                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='7'  Grid.Column="4" Grid.Row="2" Margin="0" Background="Orange"                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='34' x:Name="Divide">&#x00F7;</TextBlock>
+        </Button>
+        <!-- Input Row Two -->
+        <Button x:ConnectionId='8' Grid.Column="0" Grid.Row="3" Margin="0" Background="DarkOrange"                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='33' x:Name="Root">&#x221A;</TextBlock>
+        </Button>
+        <Button x:ConnectionId='9' Content="4" Grid.Column="1"  Grid.Row="3" Margin="0"                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='10' Content="5" Grid.Column="2" Grid.Row="3" Margin="0"                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='11' Content="6" Grid.Column="3" Grid.Row="3" Margin="0"                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='12'  Grid.Column="4" Grid.Row="3" Margin="0" Background="Orange"                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='32' x:Name="Multiply">&#x00D7;</TextBlock>
+        </Button>
+        <!-- Input Row Three -->
+        <Button x:ConnectionId='13' Grid.Column="0" Grid.Row="4" Margin="0" Background="DarkOrange"                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='31' x:Name="Power">x&#x207F;</TextBlock>
+        </Button>
+        <Button x:ConnectionId='14' Content="1" Grid.Column="1"  Grid.Row="4" Margin="0"                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='15' Content="2" Grid.Column="2" Grid.Row="4" Margin="0"                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='16' Content="3" Grid.Column="3" Grid.Row="4" Margin="0"                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='17'  Grid.Column="4" Grid.Row="4" Margin="0" Background="Orange"                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='30' x:Name="Plus">+</TextBlock>
+        </Button>
+        <!-- Input Row Three -->
+        <Button x:ConnectionId='18' Grid.Column="0" Grid.Row="5" Margin="0" Background="DarkOrange"                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='29' x:Name="Of">&#x207F;&#x221A;</TextBlock>
+        </Button>
+        <Button x:ConnectionId='19' Grid.Column="1"  Grid.Row="5" Margin="0" Background="WhiteSmoke"                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='28' x:Name="Eng">10&#x207F;</TextBlock>
+        </Button>
+        <Button x:ConnectionId='20' Content="0" Grid.Column="2" Grid.Row="5" Margin="0"                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='21' Content="." Grid.Column="3" Grid.Row="5" Margin="0" Background="WhiteSmoke"                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='22'  Grid.Column="4" Grid.Row="5" Margin="0" Background="Orange"                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='27' x:Name="Minus">-</TextBlock>
+        </Button>
+
+        <Button x:ConnectionId='23' Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="6" Margin="0" Background="PaleVioletRed"                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock x:ConnectionId='26' x:Name="Backspace">&#x21A4;</TextBlock>
+        </Button>
+        <Button x:ConnectionId='24' Content="Clear All" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" Margin="0" Background="PaleVioletRed"                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button x:ConnectionId='25' Content="Solve" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="6" Margin="0" Background="LightSalmon"                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
     </Grid>
 </Page>
