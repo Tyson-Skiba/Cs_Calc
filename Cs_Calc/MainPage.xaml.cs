@@ -60,7 +60,7 @@ namespace Cs_Calc
             
         }
 
-        public void solver(char whichO)
+        public void solverOLD(char whichO)
         {
             /*y = input;
             double num1, num2;
@@ -107,7 +107,237 @@ namespace Cs_Calc
             */
         }
 
-        private void oneClick(object sender, RoutedEventArgs e)
+        public String formater(String unf)
+        {
+            String f;
+            f = unf.Replace("\u221A", "R").Replace("\u00B2", "S").Replace("POWER", "P").Replace("OF", "O").Replace("\u00D7", "*").Replace("\u00F7", "/");
+            return f;
+        }
+
+        public String solver(String eq)
+        {
+            int startJ = -1;
+            int endK = -1;
+            int counterL = 0;
+            int count = eq.Length - eq.Replace("(", "").Length;
+            String opn = "(";
+            String cls = ")";
+
+            //Console.WriteLine("Looking for {0} Sets", count);
+
+            for (int i = 0; i < eq.Length; i++)
+            {
+                //Console.WriteLine(eq[i]);
+                if (eq[i] == opn[0])
+                {
+                    //Console.WriteLine("Found Open");
+                    counterL++;
+                    if (counterL == count)
+                    {
+                        startJ = i;
+                        //Console.WriteLine("Found Furtherthes Open: Targeting");
+                    }
+                }
+
+                if ((eq[i] == cls[0]) && (startJ > 0) && (endK == -1))
+                {
+                    //Console.WriteLine("Found Close");
+                    endK = i;
+                }
+            }
+
+            if ((endK == -1) && (count == 1))
+            {
+                endK = eq.Length - 1;
+            }
+
+            //Console.WriteLine("Found {0} Sets of Parenthesis", counterL);
+            //Console.WriteLine("Sub Equation Begins at {0} and Ends at {1}", startJ, endK);
+
+            String solveFirst = eq.Substring(startJ, endK + 1 - startJ);
+            //Console.WriteLine("Extracted: {0}", solveFirst);
+            //Console.WriteLine();
+            String solvedValue = mathsSolver(solveFirst);
+            String returnString = eq.Replace(solveFirst, solvedValue);
+
+
+            double test;
+
+            while (double.TryParse(solvedValue, out test) == false)
+            {
+                // Keep Running Through Function Untill All Terms Are Calculated
+                // The operands are not numbers so will cause this to be false
+                //Console.WriteLine("Is It: {0}", double.TryParse(solvedValue, out test));
+                solvedValue = mathsSolver(solvedValue);
+                returnString = eq.Replace(solveFirst, solvedValue);
+            }
+
+            //String returnString = eq.Replace(solveFirst, solvedValue);
+            //Console.WriteLine("Final String: {0}", returnString);
+
+            if (returnString.Length == returnString.Replace("(", "").Length)
+            {
+                ///Console.WriteLine("Final Value Found");
+                // return returnString;
+            }
+            else
+            {
+                // More Work To Be Done
+                //while(returnString.Length != returnString.Replace("(","").Length){
+                double t;
+                while (double.TryParse(returnString, out t) == false)
+                {
+                    returnString = mathsSolver(returnString);
+
+                    // Return returnString;
+                }
+            }
+
+            return returnString;
+        }
+
+         public String mathsSolver(string eq)
+        {
+            //eq = "12*32-3";
+            //eq = "R4";
+            //eq = "3O27";
+            //eq="5P3+201";
+            String findMe = eq.Replace("(", "");
+            String op;
+            String ignore = ".";
+            double num1 = 0;
+            double num2 = 0;
+            double test;
+            double sol = 0;
+            int num2s = 0;
+            int j = 0;
+            int m = 0;
+
+            bool moreNumbers = false;
+
+
+            findMe = findMe.Replace(")", "");
+            //Console.WriteLine("Raw Input: {0}", findMe);
+
+            for (int i = 0; i < findMe.Length; i++)
+            {
+                if (double.TryParse(findMe.Substring(i, 1), out test))
+                {
+                    //Console.WriteLine("ITS A NUMBER");
+                }
+                else
+                {
+                    //Console.WriteLine("ITS NOT A NUMBER");
+                    if ((num2s == 0) && (findMe[i] != ignore[0]))
+                    {
+                        num2s = i + 1;
+                    }
+                    else
+                    {
+                        if (findMe[i] != ignore[0])
+                        {
+                            moreNumbers = true;
+                            j = i - num2s;
+                            m = i + 1; // we want to include the operand
+                        }
+                    }
+                    // DEFINE SQUAREROOT AS R OR WHATEREVER LATTER TO MAINTAIN THE SIZE
+                    if (j == 0 && (findMe[i] != ignore[0]))
+                    {
+                        //Console.WriteLine("Sub: {0}",findMe.Substring(0,i));
+                        double.TryParse(findMe.Substring(0, i), out num1);
+                        //Console.WriteLine("Num1: {0} at {1}",num1,i);
+                    }
+                }
+            }
+
+            if (j == 0)
+            {
+                j = findMe.Length - num2s;
+
+            }
+
+            // For things like root and squared there should be no first term
+
+            double.TryParse(findMe.Substring(num2s, j), out num2);
+            //m = (findMe.Substring(num2s,j)).Length;
+            op = findMe.Substring(num2s - 1, 1);
+
+            //Console.WriteLine("First Number: {0}, Second Number {1}, Operator is: {2}, More Terms {3}", num1, num2, op, moreNumbers);
+
+            if (op == "+")
+            {
+                sol = num1 + num2;
+            }
+            if (op == "*")
+            {
+                sol = num1 * num2;
+            }
+            if (op == "-")
+            {
+                sol = num1 - num2;
+            }
+            if (op == "/")
+            {
+                sol = num1 / num2;
+            }
+            if (op == "S")
+            {
+                // Square Root
+                sol = num2 * num2;
+            }
+            if (op == "R")
+            {
+                //Squared
+                sol = Math.Sqrt(num2);
+            }
+            if (op == "O")
+            {
+                //Nth Root
+                sol = Math.Pow(num2, 1.0 / num1);
+            }
+
+            if (op == "P")
+            {
+                //Power
+                sol = Math.Pow(num1, num2);
+            }
+
+
+
+
+            //Console.WriteLine("Solved Term is: {0}", sol);
+            //j = j + op.Length + m;
+            //Console.WriteLine("J is: {0} OP is: {1} M is: {2}",j,op.Length,m);
+            if (moreNumbers == true)
+            {
+                //Console.WriteLine("String length: {0},String Start {1}, Substring Length {2}", findMe.Length, m, findMe.Length - m + 1);
+                //Console.WriteLine("Solved Term plus Leftovers: {0} Sub:{1}", sol, eq.Substring(m, findMe.Length - m + 1));
+                String ou = eq.Substring(m, findMe.Length - m + 1);
+                findMe = sol.ToString();
+                findMe = findMe + ou;
+                //Console.WriteLine("\nOutput Term is: {0}\n", findMe);
+                // This Block Caused\s an Exception
+
+
+                // If there are more terms pump back into this method
+
+                /*if (moreNumbers == true){
+                    Console.WriteLine("Parsing {0} Back Into Solver",findMe);   
+                    mathsSolver(findMe);   
+                }*/
+            }
+            else
+            {
+                findMe = sol.ToString();
+            }
+            //Console.WriteLine();
+
+            return findMe;
+        }
+    
+
+    private void oneClick(object sender, RoutedEventArgs e)
         {
             this.textBox.Text = " ";
             input += "1";
@@ -316,14 +546,14 @@ namespace Cs_Calc
 
         private void powerClick(object sender, RoutedEventArgs e)
         {
-            totalDisp = totalDisp + "\u00F7";
-            // If to work out value ie 1 2 3 4 5 6 7 8 9 0
+            totalDisp = totalDisp + "x\x207F";
+            // If to work out x value ie 1 2 3 4 5 6 7 8 9 0
             this.textBox.Text = totalDisp;
         }
 
         private void ofClick(object sender, RoutedEventArgs e)
         {
-            totalDisp = totalDisp + "\u00F7";
+            totalDisp = totalDisp + "\u207F\u221A";
             // If to work out value ie 1 2 3 4 5 6 7 8 9 0
             this.textBox.Text = totalDisp;
         }
