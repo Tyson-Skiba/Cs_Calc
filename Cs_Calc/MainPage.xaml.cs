@@ -530,6 +530,10 @@ namespace Cs_Calc
 
             }
             resultBox.Text = result.ToString();
+
+            String formated = formater(totalDisp);
+            formated = "(" + formated + ")";
+            resultBox.Text = solver(formated);
         }
 
         private void rootClick(object sender, RoutedEventArgs e)
